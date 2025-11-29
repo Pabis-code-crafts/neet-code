@@ -37,5 +37,4 @@ build/
 ### Mac OS ###
 .DS_Store
 
-git config user.name "Your Name"
-git config user.email "yourgithubemail@example.com"
+
