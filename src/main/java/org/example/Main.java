@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.solutionFour.SolutionFour;
 import org.example.solutionOne.SolutionOne;
 import org.example.solutionThree.SolutionThree;
 import org.example.solutionTwo.SolutionTwo;
@@ -14,7 +15,7 @@ public class Main {
         SolutionOne s = new SolutionOne();
         SolutionTwo s2 = new SolutionTwo();
         SolutionThree s3 = new SolutionThree();
-
+        SolutionFour s4 = new SolutionFour();
 
         Integer[] arr = {1, 2, 3, 4, 5, 7, 6, 7};
 
@@ -30,6 +31,11 @@ public class Main {
         int[] result3 = s3.indecesOfSum(valuesInArray,target);
         System.out.println("indeces of sums " + Arrays.toString(result3));
 
+        System.out.println(
+                s4.groupAnagrams(
+                        new String[]{"act","pots","tops","cat","stop","hat"}
+                )
+        );
 
     }
 }
