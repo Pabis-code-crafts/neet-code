@@ -4,6 +4,7 @@ import org.example.solutionFour.SolutionFour;
 import org.example.solutionOne.SolutionOne;
 import org.example.solutionThree.SolutionThree;
 import org.example.solutionTwo.SolutionTwo;
+import org.example.topKFrequency.TopKFrequency;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -36,6 +37,14 @@ public class Main {
                         new String[]{"act","pots","tops","cat","stop","hat"}
                 )
         );
+
+        TopKFrequency result5 = new TopKFrequency();
+        int[] val = result5.topKFrequent(new int[]{9, 8, 7, 9, 9, 8, 6, 5, 4, 1, 2, 2, 3},3);
+        for (int x : val) {
+            System.out.print(x + " ");
+        }
+        System.out.println();
+
 
     }
 }
