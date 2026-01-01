@@ -38,12 +38,8 @@ public class Main {
                 )
         );
 
-        TopKFrequency result5 = new TopKFrequency();
-        int[] val = result5.topKFrequent(new int[]{9, 8, 7, 9, 9, 8, 6, 5, 4, 1, 2, 2, 3},3);
-        for (int x : val) {
-            System.out.print(x + " ");
-        }
-        System.out.println();
+
+
 
 
     }
