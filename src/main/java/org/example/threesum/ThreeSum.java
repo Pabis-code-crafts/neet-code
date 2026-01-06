@@ -36,3 +36,9 @@ public class ThreeSum {
     }
 
 }
+
+//“Any time I compare nums[left] with nums[left ± 1] or nums[right ± 1], I must ensure left < right.”
+//
+//Interview one-liner 🗣️
+//
+//“The left < right condition ensures safe index access and prevents pointer crossover during duplicate skipping.”
