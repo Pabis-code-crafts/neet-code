@@ -1,4 +1,4 @@
-package org.example.fibonaci;
+package org.example.dp.fibonaci;
 
 import java.util.Arrays;
 

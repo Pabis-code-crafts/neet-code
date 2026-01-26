@@ -1,4 +1,4 @@
-package org.example.climbingStairs;
+package org.example.dp.climbingStairs;
 
 public class ClimbingStairs {
     public static void main(String[] args) {

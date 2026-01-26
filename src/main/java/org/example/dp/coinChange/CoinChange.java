@@ -1,4 +1,4 @@
-package org.example.coinChange;
+package org.example.dp.coinChange;
 
 import java.util.Arrays;
 
