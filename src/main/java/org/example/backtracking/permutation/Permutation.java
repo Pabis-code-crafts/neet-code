@@ -3,7 +3,6 @@ package org.example.backtracking.permutation;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.util.Collections.swap;
 
 public class Permutation {
     public static void main(String[] args) {
