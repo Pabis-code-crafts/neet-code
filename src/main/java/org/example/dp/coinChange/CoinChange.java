@@ -17,6 +17,7 @@ public class CoinChange {
                 }
             }
         }
+        System.out.println(Arrays.toString(dp));
         System.out.println(dp[amount]);
     }
 }
