@@ -1,7 +1,7 @@
 package org.example.LinkedList.Node;
 
 public class Node {
-    int val;
+    public int val;
     public Node next;
 
     public Node(int val) {
