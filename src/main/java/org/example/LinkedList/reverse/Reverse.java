@@ -29,10 +29,11 @@ public class Reverse {
         }
 
         head = prev;
-        Node temp = head;
-        while(temp!=null){
-            System.out.println(temp);
-            temp =  temp.next;
+
+        while(head!=null){
+            System.out.println(head);
+            head =  head.next;
+
         }
 
         System.out.println(prev);

@@ -10,6 +10,35 @@ public class ReverseTwo {
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
 
-        
+        int left = 2;
+        int right = 4;
+        Node dummy = new Node(-1);
+        dummy.next = head;
+
+        Node prev = dummy;
+        for (int i = 1; i < left; i++) {
+
+            prev = prev.next;
+        }
+
+//        System.out.println(prev);
+
+
+        Node curr = prev.next;
+
+        for (int i = 0; i < right - left; i++) {
+            Node nextNode = curr.next;
+            curr.next = nextNode.next;
+            nextNode.next = prev.next;
+            prev.next = nextNode;
+        }
+        head = dummy.next;
+        while(head!=null){
+            System.out.println(head);
+            head =  head.next;
+
+        }
+
+
     }
 }
