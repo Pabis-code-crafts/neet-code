@@ -1,4 +1,4 @@
-package org.example.groupAnagram;
+package org.example.anagram.groupAnagram;
 
 import java.util.ArrayList;
 import java.util.Arrays;
