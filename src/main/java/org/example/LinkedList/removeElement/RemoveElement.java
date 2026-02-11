@@ -25,7 +25,7 @@ public class RemoveElement {
                 curr = curr.next;
             }
         }
-
+        //
         head = dummy.next;
 
         Node temp = head;
