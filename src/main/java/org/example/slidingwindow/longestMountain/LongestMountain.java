@@ -1,4 +1,4 @@
-package org.example.longestMountain;
+package org.example.slidingwindow.longestMountain;
 
 public class LongestMountain {
     public static void main(String[] args) {
