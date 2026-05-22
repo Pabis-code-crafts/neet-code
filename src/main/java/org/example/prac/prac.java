@@ -1,30 +1,31 @@
-package org.example.validPalindrome;
+package org.example.prac;
 
-import java.util.Locale;
-
-public class  ValidPalindrome {
+public class prac {
     public static void main(String[] args) {
         String sentence = "Was it a car or a cat I saw?";
         sentence = sentence.toLowerCase();
-        int left = 0;
         int right = sentence.length()-1;
+        int left = 0;
 
         while(left<right){
-            while (left < right && !Character.isLetterOrDigit(sentence.charAt(left))) {
+            while(left<right && !Character.isLetter(sentence.charAt(left))){
                 left++;
             }
-
-            while (left < right && !Character.isLetterOrDigit(sentence.charAt(right))) {
+            while(left<right && !Character.isLetter(sentence.charAt(right))){
                 right--;
             }
             if(sentence.charAt(left)!=sentence.charAt(right)){
-                System.out.println("false");
+                System.out.println("not palindrome");
                 return;
             }
+
             left++;
             right--;
+
+
+
         }
-        System.out.println("true");
+        System.out.println("palindrome");
 
     }
 }
