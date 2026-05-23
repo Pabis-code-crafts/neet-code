@@ -1,31 +1,41 @@
 package org.example.prac;
 
+import java.util.*;
+
 public class prac {
     public static void main(String[] args) {
-        String sentence = "Was it a car or a cat I saw?";
-        sentence = sentence.toLowerCase();
-        int right = sentence.length()-1;
-        int left = 0;
 
-        while(left<right){
-            while(left<right && !Character.isLetter(sentence.charAt(left))){
-                left++;
+        char[][] grid = {
+                {'1','1','1','1','0'},
+                {'1','1','0','1','0'},
+                {'1','1','0','0','0'},
+                {'0','0','0','1','0'}
+        };
+
+        int[][] dir = {{-1,0},{0,-1},{1,0},{0,1}};
+        int islands = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j]=='1'){
+                    islands++;
+                    islandchecker(grid, i, j);
+                }
             }
-            while(left<right && !Character.isLetter(sentence.charAt(right))){
-                right--;
-            }
-            if(sentence.charAt(left)!=sentence.charAt(right)){
-                System.out.println("not palindrome");
-                return;
-            }
-
-            left++;
-            right--;
-
-
-
         }
-        System.out.println("palindrome");
+        System.out.println("islands : " + islands);
+    }
+
+    private static void islandchecker(char[][] grid, int row, int col) {
+        if(row < 0 || col < 0 || row >= grid.length || col >= grid[0].length || grid[row][col] == '0'){
+            return;
+        }
+        grid[row][col] = '0';
+        islandchecker(grid,row-1,col);
+        islandchecker(grid,row,col-1);
+        islandchecker(grid,row,col+1);
+        islandchecker(grid,row+1,col);
 
     }
+
+
 }

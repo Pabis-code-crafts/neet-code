@@ -7,47 +7,47 @@ import java.util.List;
 
 public class SpiralMatrix {
     public static void main(String[] args) {
-        int[][] matr = {{1,2,3,4},{5,6,7,8},{9,10,11,12}};
-        List<List<Integer>> mat = new ArrayList<>();
+
+        int[][] matrix = {
+                {1, 2, 3},
+                {4, 5, 6},
+                {7, 8, 9}
+        };
         List<Integer> res = new ArrayList<>();
 
-        for(int i =0; i < matr.length; i++){
-            List<Integer> row = new ArrayList<>();
-            for (int j = 0; j < matr[0].length; j++) {
-                row.add(matr[i][j]);
+        int top = 0;
+        int bottom = matrix.length - 1;
+        int left = 0;
+        int right = matrix[0].length - 1;
+
+        while(top<=bottom && left<=right){
+            for (int i = left; i <= right; i++) {
+                res.add(matrix[top][i]);
             }
-            mat.add(row);
+            top++;
+            for (int i = top; i <= bottom; i++) {
+                res.add(matrix[i][right]);
+            }
+            right--;
+            for (int i = right; i >= left; i--) {
+                res.add(matrix[bottom][i]);
+            }
+            bottom--;
+            for (int i = bottom; i >= top; i--) {
+                res.add(matrix[i][left]);
+            }
+            left++;
+
         }
-
-        while(!mat.isEmpty()){
-            res.addAll(mat.remove(0));
-
-            for(List<Integer> row: mat){
-                if(!row.isEmpty()){
-                    res.add(row.remove(row.size()-1));
-                }
-            }
-
-            if(!mat.isEmpty()){
-                List<Integer> bottom = mat.remove(mat.size() -1);
-                Collections.reverse(bottom);
-                res.addAll(bottom);
-            }
-
-            for (int i = mat.size() - 1; i >= 0; i--) {
-                if (!mat.get(i).isEmpty()) {
-                    res.add(mat.get(i).remove(0));
-                }
-            }
-        }
-        res.stream().forEach(System.out::print);
+        System.out.println(res);
+    }
 
 
     }
 
 
 
-}
+
 
 //Step 1: remove top row
 //Step 2: remove last element of each remaining row
