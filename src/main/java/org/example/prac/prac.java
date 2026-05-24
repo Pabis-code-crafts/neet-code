@@ -4,23 +4,31 @@ import java.util.*;
 
 public class prac {
     public static void main(String[] args) {
-        int container[] = {1, 8, 6, 2, 5, 4, 8, 3, 7};
-        int l = 0;
-        int r = container.length-1;
-        int maxhold = 0;
+        int[] nums = {-2, 0, 3, -5, 2, -1};
+        int[][] queries = {
+                {0, 2},
+                {2, 5},
+                {0, 5}
+        };
 
-
-        while(l<r){
-            int surface = r -l;
-            int holdheight = Math.min(container[r],container[l]);
-            maxhold = Math.max(surface*holdheight,maxhold);
-            if(container[r]>container[l]){
-                l++;
-            }else r--;
-
-
+        int additionOfValue[] = new int[nums.length];
+        additionOfValue[0] = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            System.out.println(additionOfValue[i]);
+            System.out.println(additionOfValue[i-1]);
+            additionOfValue[i] = nums[i] + additionOfValue[i-1];
         }
-        System.out.println(maxhold);
+        System.out.println(Arrays.toString(additionOfValue));
+        for (int i = 0; i < queries.length; i++) {
+            int l = queries[i][0];
+            int r = queries[i][1];
+            if(l==0){
+                System.out.println(additionOfValue[r]);
+            }else {
+                System.out.println(additionOfValue[r]-additionOfValue[l-1]);
+            }
+        }
+
     }
 
 
