@@ -1,34 +1,32 @@
 package org.example.prac;
 
+import org.example.LinkedList.Node.Node;
+
 import java.util.*;
 
 public class prac {
     public static void main(String[] args) {
-        int[] nums = {-2, 0, 3, -5, 2, -1};
-        int[][] queries = {
-                {0, 2},
-                {2, 5},
-                {0, 5}
-        };
+        Node head = new Node(1);
+        head.next = new Node(2);
+        head.next.next = new Node(3);
+        head.next.next.next = new Node(4);
+        head.next.next.next.next = new Node(5);
+        //head.next.next.next.next.next = head;
 
-        int additionOfValue[] = new int[nums.length];
-        additionOfValue[0] = nums[0];
-        for (int i = 1; i < nums.length; i++) {
-            System.out.println(additionOfValue[i]);
-            System.out.println(additionOfValue[i-1]);
-            additionOfValue[i] = nums[i] + additionOfValue[i-1];
-        }
-        System.out.println(Arrays.toString(additionOfValue));
-        for (int i = 0; i < queries.length; i++) {
-            int l = queries[i][0];
-            int r = queries[i][1];
-            if(l==0){
-                System.out.println(additionOfValue[r]);
-            }else {
-                System.out.println(additionOfValue[r]-additionOfValue[l-1]);
+        Node slow = head;
+        Node fast = head;
+
+        boolean hasCycle = false;
+
+        while (slow != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast){
+                hasCycle=true;
+                break;
             }
         }
-
+        System.out.println(hasCycle);
     }
 
 

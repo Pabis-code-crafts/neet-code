@@ -8,12 +8,10 @@ public class LetterCase {
 
 
     public static void main(String[] args) {
-
         String s = "a1b";
         List<String> res = new ArrayList<>();
         backtrack(s.toCharArray(), 0, res);
         System.out.println("FINAL RESULT → " + res);
-
     }
 
     static void backtrack(char[] arr, int index, List<String> res) {
@@ -31,10 +29,5 @@ public class LetterCase {
         }else{
             backtrack( arr, index+1, res);
         }
-
-
-
-
-
     }
 }
