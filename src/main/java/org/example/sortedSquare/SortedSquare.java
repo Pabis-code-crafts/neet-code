@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SortedSquare {
     public static void main(String[] args) {
-        int[] nums = {-4, -1, 0, 3, 10};
+        int[] nums = {-4, -1, 0, 2, 3, 10};
         int numsLength = nums.length;
         int[] res = new int[numsLength];
         int left = 0;
