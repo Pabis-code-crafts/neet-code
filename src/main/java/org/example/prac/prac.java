@@ -11,22 +11,28 @@ public class prac {
         head.next.next = new Node(3);
         head.next.next.next = new Node(4);
         head.next.next.next.next = new Node(5);
-        //head.next.next.next.next.next = head;
 
-        Node slow = head;
-        Node fast = head;
+        int k = 4;
 
-        boolean hasCycle = false;
+        Node dummy = new Node(-1);
 
-        while (slow != null && fast.next != null) {
-            slow = slow.next;
-            fast = fast.next.next;
-            if(slow == fast){
-                hasCycle=true;
-                break;
+        dummy.next = head;
+        Node curr = dummy;
+        while(curr.next!=null){
+            if(curr.next.val==k){
+                curr.next = curr.next.next;
+            }else {
+                curr = curr.next;
             }
         }
-        System.out.println(hasCycle);
+        head = dummy.next;
+
+        Node temp = head;
+        while(temp!=null){
+            System.out.println(temp);
+            temp = temp.next;
+        }
+
     }
 
 
