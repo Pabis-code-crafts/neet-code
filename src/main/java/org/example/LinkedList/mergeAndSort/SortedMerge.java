@@ -14,17 +14,7 @@ public class SortedMerge {
         list2.next.next.next = new Node(8);
 
         Node list3 = new Node(-1);
-
-        if(list1.val<=list2.val){
-            list3.next = list1;
-            list1 = list1.next;
-        }else{
-            list3.next = list2;
-            list2 = list2.next;
-        }
-
-        Node head = list3.next;
-        list3 = list3.next;
+        Node head = list3;
         while(list1!=null && list2!=null){
             if(list1.val<=list2.val){
                 list3.next = list1;
@@ -44,7 +34,7 @@ public class SortedMerge {
         }
 
 
-
+        head= head.next;
         while(head!=null){
             System.out.println(head);
             head = head.next;
